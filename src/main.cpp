@@ -56,11 +56,12 @@ esp_mqtt_client_handle_t mqttClient = NULL;
 esp_mqtt_client_config_t mqttConfig = {
     .event_loop_handle = &mqttTaskHandle,
     .uri = MQTT_URI,
-    .client_id = "RGB_MQTT_DINO",
+    .client_id = "RGB_MQTT_FROG",
 #if defined(MQTT_SECURE) && MQTT_SECURE
     .username = MQTT_USER,
     .password = MQTT_PASS,
 #endif
+    .keepalive = 360,
     .task_prio = 5,
     .task_stack = 6144,
     .buffer_size = 2048,
